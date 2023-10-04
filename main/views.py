@@ -91,7 +91,7 @@ def show_main(request):
     return render(request, "main.html", context)
 
 def get_product_json(request):
-    product_item = Product.objects.all()
+    product_item = Product.objects.filter(user=request.user)
     return HttpResponse(serializers.serialize('json', product_item))
 
 def delete_product(request, id):
