@@ -136,6 +136,7 @@ def show_json_by_id(request, id):
 
 @csrf_exempt
 def create_product_flutter(request):
+    print("masuk")
     if request.method == 'POST':
         
         data = json.loads(request.body)
